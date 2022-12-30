@@ -1,0 +1,111 @@
+.cards {
+      background: grey;
+      width: 300px;
+      height: 450px;
+      margin: 10px;
+      border-radius: 15px;
+      transition: all .3s ease-out;
+      color: white;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .card-4 {
+      margin-left: 5rem;
+    }
+
+    .card-2 {
+      margin-left: 5rem;
+    }
+
+    .card-5 {
+      margin-left: 10rem;
+    }
+
+
+    .card-image {
+      background: aqua;
+      height: 230px;
+      margin-bottom: 15px;
+      background-size: cover;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .cards:hover {
+      transform: scale(1.05);
+    }
+
+    .card-head {
+      font-size: 1.5rem;
+      padding-left: 10px;
+    }
+
+    .card-info {
+      width: 80%;
+      padding-left: 10px;
+    }
+
+    .btn {
+      margin-left: 10px;
+    }
+
+    .car-1 {
+      background-image: url(imgs/1.jpg);
+    }
+
+    .car-2 {
+      background-image: url(imgs/2.png);
+    }
+
+    .car-3 {
+      background-image: url(imgs/3.png);
+    }
+
+    .car-4 {
+      background-image: url(imgs/5.jpg);
+    }
+
+    .car-5 {
+      background-image: url(./imgs/11.jpg);
+    }
+
+    .logo {
+      height: 3rem;
+    }
+
+    .devicon {
+      font-size: 5rem;
+      color: #172b4d;
+    }
+
+    .progress-container {
+      border: 2px solid #172b4d;
+      height: 14px;
+      border-radius: 10px;
+      width: 80%;
+    }
+
+    .progress {
+      height: 10px;
+      width: 80%;
+      background: #172b4d;
+
+    }
+
+    .skill {
+      margin: 10px auto;
+    }
+
+    .skill-name {
+      font-family: "Poppins" sans-serif;
+      font-weight: 700;
+    }
+
+     @media only screen and (max-width: 768px) {
+      .cards {
+        margin-left: 2rem;
+      }
+    }
