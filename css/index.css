@@ -1,6 +1,6 @@
 .cards {
       background: grey;
-      width: 300px;
+      width: 250px;
       height: 450px;
       margin: 10px;
       border-radius: 15px;
@@ -106,6 +106,7 @@
 
      @media only screen and (max-width: 768px) {
       .cards {
-        margin-left: 2rem;
+        position: absolute;
+        left: 2%;
       }
     }
