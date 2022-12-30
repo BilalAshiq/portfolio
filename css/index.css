@@ -1,4 +1,6 @@
 .cards {
+      display: flex;
+      flex-direction: column;
       background: grey;
       width: 250px;
       height: 450px;
@@ -105,8 +107,6 @@
     }
 
      @media only screen and (max-width: 768px) {
-      .cards {
-        position: absolute;
-        left: 2%;
-      }
+      
+      
     }
