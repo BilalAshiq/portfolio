@@ -13,19 +13,7 @@
     .row {
       display: flex;
       flex-wrap: wrap;
-    }
-
-    .card-4 {
-      margin-left: 5rem;
-    }
-
-    .card-2 {
-      margin-left: 5rem;
-    }
-
-    .card-5 {
-      margin-left: 5rem;
-    }
+}
 
 
     .card-image {
