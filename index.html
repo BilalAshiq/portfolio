@@ -349,5 +349,32 @@
     </div>
   </footer>
 <script src="https://kit.fontawesome.com/de41999cf3.js"></script>
+<script>
+            $("#sendBtn").click((e)=>{
+            e.preventDefault();
+            let name = $("#name").val();
+            let email = $("#email").val(); 
+            let subject = $("#subject").val();
+            let message = $("#message").val(); 
+
+
+            let msg = name+" having email id: "+email+ " with Subject:- "+subject+" says that => "+message;
+            msg = encodeURI(msg);
+
+
+            let url = "https://api.telegram.org/bot5983296851:AAHla-Znwa8Vy8dGdvEuWLrbNdMfylHxo00/sendMessage?chat_id=5843741921&text="+msg; 
+
+            $.ajax({
+                url: url,
+                method: "GET",
+                success: function (data) {
+                    alert("Message Sent!")
+                },
+                error: function () {
+                    alert("Failed To Send Message!");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
