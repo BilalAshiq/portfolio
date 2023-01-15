@@ -18,14 +18,14 @@
 
 #loader:before, #loader:after {
   content: '';
-  border: 1em solid #172b4d;
+  border: 1em solid #4ecca3;
   border-radius: 50%;
   width: inherit;
   height: inherit;
   position: absolute;
   top: 0;
   left: 0;
-  animation: loader .2s linear infinite;
+  animation: loader 2s linear infinite;
   opacity: 0;
 }
 
