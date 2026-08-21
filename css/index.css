@@ -94,6 +94,10 @@
       font-weight: 700;
     }
 
+.rounder-circle {
+      width: 200vh;
+}
+
      @media only screen and (max-width: 768px) {
       
       
