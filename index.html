@@ -345,31 +345,81 @@
      	   $("#preloader").fadeToggle()
     	}, 1500);
 		
-            $("#sendBtn").click((e)=>{
-            e.preventDefault();
-            let name = $("#name").val();
-            let email = $("#email").val(); 
-            let subject = $("#subject").val();
-            let message = $("#message").val(); 
+           
+$(document).ready(function() {
 
+    // Telegram Configuration
+    const BOT_TOKEN = "https://api.telegram.org/bot8313954157:AAFCp6sPEAX2eQjy6I4WTgsr-hDrgYA-NOk";
+    const CHAT_ID = "8941127067";
 
-            let msg = name+" having email id: "+email+ " with Subject:- "+subject+" says that => "+message;
-            msg = encodeURI(msg);
+    $("#sendBtn").click(function(e) {
 
+        e.preventDefault();
 
-            let url = "https://api.telegram.org/bot8313954157:AAFCp6sPEAX2eQjy6I4WTgsr-hDrgYA-NOk"+msg; 
+        let name = $("#name").val().trim();
+        let email = $("#email").val().trim();
+        let subject = $("#subject").val().trim();
+        let message = $("#message").val().trim();
 
-            $.ajax({
-                url: url,
-                method: "GET",
-                success: function (data) {
-                    alert("Message Sent!")
-                },
-                error: function () {
-                    alert("Failed To Send Message!");
+        // Validate fields
+        if (!name || !email || !subject || !message) {
+            alert("Please fill in all fields!");
+            return;
+        }
+
+        // Prepare Telegram message
+        let msg =
+            "📩 NEW WEBSITE ENQUIRY\n\n" +
+            "👤 Name: " + name + "\n" +
+            "📧 Email: " + email + "\n" +
+            "📌 Subject: " + subject + "\n\n" +
+            "💬 Message:\n" + message;
+
+        // Telegram API URL
+        let url = "https://api.telegram.org/bot"
+                  + BOT_TOKEN
+                  + "/sendMessage";
+
+        // Send message
+        $.ajax({
+
+            url: url,
+            method: "POST",
+
+            data: {
+                chat_id: CHAT_ID,
+                text: msg
+            },
+
+            success: function(data) {
+
+                if (data.ok) {
+
+                    alert("Message Sent Successfully!");
+
+                    $("#name, #email, #subject, #message").val("");
+
+                } else {
+
+                    alert("Telegram Error: " + data.description);
+
                 }
-            });
+
+            },
+
+            error: function(xhr) {
+
+                console.error("Telegram Error:", xhr.responseText);
+
+                alert("Failed To Send Message!");
+
+            }
+
         });
+
+    });
+
+});
 
 	// To-top-Btn
         var mybutton = document.getElementById("topBtn");
